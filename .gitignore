@@ -1,0 +1,10 @@
+
+#OS junk files
+[Tt]humbs.db
+*.DS_Store
+.DS_Store
+
+# CLion default folders
+cmake_make_gunit_cppunit/cmake-build-debug/
+cmake_make_gunit_cppunit/cmake-build-release/
+cmake_make_gunit_cppunit/.idea
