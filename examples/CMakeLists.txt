@@ -47,3 +47,17 @@ add_executable(033_observer 033_observer.cpp)
 add_executable(034_visitor 034_visitor.cpp)
 
 
+add_executable(035_vector 035_vector.cpp)
+add_executable(036_vector_2 036_vector_2.cpp)
+add_executable(037_vector_3.cpp 037_vector_3.cpp)
+
+add_executable(040_erase_remove 040_erase_remove.cpp)
+add_executable(041_equality_equivalent 041_equality_equivalent.cpp)
+
+
+add_executable(042_crtp_class 042_crtp_class.cpp)
+
+
+
+
+

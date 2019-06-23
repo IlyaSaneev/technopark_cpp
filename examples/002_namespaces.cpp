@@ -261,7 +261,7 @@ int main(int argc, char *argv[]) {
     outer::inner2::print_with_using_foo();
     outer::inner2::print_with_explicit_foo();
 
-    // operator from namespace - Koenig's search (ADL, Argument-dependent name lookup)
+    // operator from namespace - Koenig's search (ADL, Argument-dependent param1 lookup)
     ADL::outer::inner::SumObject a(1, 2);
     a.print();
     ADL::outer::inner::SumObject b(3, 4);

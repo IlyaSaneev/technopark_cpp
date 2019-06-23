@@ -8,3 +8,5 @@
 cmake_make_gunit_cppunit/cmake-build-debug/
 cmake_make_gunit_cppunit/cmake-build-release/
 cmake_make_gunit_cppunit/.idea
+examples/.idea
+examples/cmake-build-debug
