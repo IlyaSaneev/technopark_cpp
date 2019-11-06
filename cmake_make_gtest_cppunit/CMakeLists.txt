@@ -13,6 +13,8 @@ set(LIB_SOURCE_FILES
         Heap.cpp)
 
 add_library(study_std_lib STATIC ${LIB_SOURCE_FILES})
+add_library(study_std_lib_s SHARED ${LIB_SOURCE_FILES})
+add_library(study_std_lib_m MODULE ${LIB_SOURCE_FILES})
 
 add_executable(prog main.cpp)
 add_executable(tests_cppunit tests_cppunit.cpp)
@@ -33,6 +35,12 @@ include_directories(${GTEST_INCLUDE_DIRS})
 
 add_executable(tests_gtest tests_gtest.cpp)
 
+add_executable(tests_gmock tests_gmock.cpp)
+add_executable(seg_fault stack_corr.cpp)
 # links gtest
 target_link_libraries(tests_gtest ${GTEST_LIBRARIES})
 target_link_libraries(tests_gtest study_std_lib)
+target_link_libraries(tests_gmock study_std_lib -lgmock)
+
+# valgrind examples
+add_executable(val_prob val_probs.c)

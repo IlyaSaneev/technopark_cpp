@@ -5,7 +5,7 @@
 
 class DArray {
  public:
-  explicit DArray(size_t buffer_size);
+  explicit DArray(size_t buffer_size = 10);
   virtual ~DArray();
   virtual void PushBack(double value);
   double PopBack();
@@ -21,7 +21,7 @@ class DArray {
   bool IsEmpty() const { return actual_size_ == 0; }
 
  private:
-  void Reallocate();
+  virtual void Reallocate();
   void DtorHelper();
 
   double* buffer_;

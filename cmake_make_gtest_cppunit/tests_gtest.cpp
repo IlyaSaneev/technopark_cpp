@@ -10,9 +10,23 @@
 TEST(DArray, SizeCapacity) {
   DArray darray(64);
   darray.PushBack(5);
+  ASSERT_EQ(darray.Size(), 1);
+  // ..
   EXPECT_EQ(darray.Capacity(), 64);
-  EXPECT_EQ(darray.Size(), 1);
 }
+
+class ArrayTest : public ::testing::Test {
+ protected:
+  void SetUp() override {
+    a0_.PushBack(1);
+    a0_.PushBack(2);
+    a0_.PushBack(3);
+  }
+
+  void TearDown() override {}
+
+  DArray a0_;
+};
 
 TEST(DArray, Pop) {
   DArray darray(64);
@@ -27,7 +41,7 @@ TEST(DArray, Pop) {
     darray.PopBack();
     darray.PopBack();
     darray.PopBack();
-  } catch(...) {
+  } catch (...) {
     return;
   }
 
@@ -54,6 +68,10 @@ TEST(Queue, Pop) {
   } catch (const std::exception& e) {
     GTEST_FAIL() << e.what();
   }
+}
+
+TEST_F(ArrayTest, IsNotEmptyInitially) {
+  EXPECT_EQ(a0_.Size(), 3);
 }
 
 int main(int argc, char** argv) {
