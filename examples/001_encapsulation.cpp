@@ -22,15 +22,15 @@ public:
     }
 };
 
-union C {
-    int a;
-private:
-    int b;
-public:
-    int c;
-    void print() {
-        std::cout << "C: " << a << " " << b << " " << c << std::endl;
-    }
+class MutableClass {
+ public:
+  MutableClass(){};
+
+  void method() const  {
+    a = 5;
+  }
+
+  mutable int a = 2;
 };
 
 int main(int argc, char *argv[]) {

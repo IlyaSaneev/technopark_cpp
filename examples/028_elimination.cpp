@@ -7,14 +7,13 @@ struct B : public A {
 };
 
 struct C : public A {
-  int var;
   A a;
+  int var;
 };
 
 struct D : public A {
   int a;
   B b;
-  // char c;
 };
 
 int main() {

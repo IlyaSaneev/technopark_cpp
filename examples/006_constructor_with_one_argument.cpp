@@ -1,7 +1,17 @@
 #include <iostream>
 
+using namespace std;
+
 struct Sample {
-    Sample(int prm = 0, double drm = 0): _prm(prm), _drm(drm) {}
+    // explicit
+    Sample(int prm = 0, double drm = 0): _prm(prm), _drm(drm) {
+      std::cout << "ctor " << prm << endl;
+    }
+
+    Sample(const Sample& rhs) {
+      std::cout << "copy ctor "<< endl;
+    }
+
     void print() {
         std::cout << _prm << std::endl;
     }
@@ -14,6 +24,8 @@ int main(int argc, char *argv[]) {
     Sample sample1(10),
            sample2 = Sample(10),
            sample3 = 10;
+    Sample sample4 = sample1;
+
     sample1.print();
     sample2.print();
     sample3.print();

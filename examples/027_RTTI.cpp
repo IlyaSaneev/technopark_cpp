@@ -79,6 +79,19 @@ int main() {
     if(typeid(b) == typeid(B*)) {
       std::cout << "b is B*" << std::endl;
     }
+
+    if(typeid(b) == typeid(A*)) {
+      std::cout << "b is A*" << std::endl;
+    }
+
+
+    if(typeid(*b) == typeid(A)) {
+      std::cout << "*b is B" << std::endl;
+    }
+
+    if(typeid(*b) == typeid(B)) {
+      std::cout << "*b is B" << std::endl;
+    }
   }
 
   {

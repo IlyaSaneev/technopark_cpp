@@ -224,6 +224,12 @@ namespace long_outer {
     }
 }
 
+//void some_func() { printf("1\n"); }
+//
+//namespace {
+//void some_func() { printf("2\n");  ::some_func();}
+//} // namespace
+
 int main(int argc, char *argv[]) {
     // simple namespace
     N1::A::static_print();
