@@ -1,0 +1,42 @@
+#!/usr/bin/env python
+# encoding: utf-8
+
+from waflib.Build import BuildContext
+
+
+APPNAME = 'tp'
+VERSION = '0.0.1'
+
+top = '.'
+out = 'BUILD'
+
+def options(ctx):
+        ctx.load('compiler_cxx')
+
+def configure(ctx):
+    #print('→ configuring the project in ' + ctx.path.abspath())
+    ctx.load('compiler_cxx')
+
+def build(ctx):
+
+    #ctx.objects(source='c.c', target='myobjects')
+    #ctx.shlib(
+            #target       ='myshlib',
+            #source       ='b.c',
+            #use='myobjects'
+    #)
+
+    ctx.program(
+            target       ='app',
+            use          ='myshlib',
+            source       =['main.cpp', 'options.cpp', 'utils.cpp', 'server.cpp', 'engine.cpp',
+                            'select.cpp', 'poll.cpp', 'poll_async.cpp', ], # 'epoll.cpp',
+            includes     = ['.'],
+            defines     = ['DEBUG=1'],
+            lib          = ['pthread'],
+            #libpath      = ['/usr/lib'],
+            #stlib        = ['dl'],
+            #stlibpath    = ['/usr/local/lib'],
+            linkflags    = ['-ggdb'],
+            cxxflags     = ['-ggdb', '-std=c++11', '-Wall', '-Werror'],
+    )

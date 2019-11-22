@@ -12,3 +12,7 @@ examples/.idea
 examples/cmake-build-debug
 cmake_make_gtest_cppunit/cmake-build-debug
 .idea
+net/cmake-build-debug
+*.dSYM
+.waf*
+net/libtpevent/src/BUILD
